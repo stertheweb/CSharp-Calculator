@@ -51,30 +51,26 @@ namespace SimpleCalculator
 			operation = Console.ReadLine();
 
 			// Sending selected operation to method
-			switch (operation)
+			switch (operation.ToUpper())
 			{
 				case "A":
-				case "a":
 					z = Add(xVal, yVal);
 					break;
 				case "D":
-				case "d":
 					z = Divide(xVal, yVal);
 					break;
 				case "S":
-				case "s":
 					z = Subtract(xVal, yVal);
 					break;
 				case "M":
-				case "m":
 					z = Multiply(xVal, yVal);
 					break;
 				default:
-					z = Add(xVal, yVal);
-
-					break;
+					Console.WriteLine("Please choose a valid operation.");
+					continue;
 			}
-
+			
+			// Print result
 			Console.WriteLine("Result: " + z);
 
 		}
